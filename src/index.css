@@ -1,0 +1,91 @@
+h1 {
+  color: black;
+  margin-bottom: 40px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 5px;
+}
+
+.sidebar {
+  flex-direction: column;
+  border-right: 2px solid black;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  margin-left: -100px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  text-decoration: none;
+  margin-bottom: 5px;
+  gap: 50px;
+}
+
+.sidebar nav a {
+  display: flex;
+  text-decoration: none;
+  gap: 10px;
+  width: 100%;
+  justify-content: left;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 999px;
+  align-items: center;
+
+}
+
+.sidebar nav a:hover {
+  background-color: #FFA07A;
+}
+
+body {
+  scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: scroll;
+  /* display: flex; */
+  height: 100vh;
+  margin: 0px;
+  background-color: #FAEBD7;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 250px;
+}
+
+.avatar {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.post-info {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 90%;
+  max-width: 600px;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+
+}
