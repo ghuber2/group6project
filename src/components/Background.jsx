@@ -1,6 +1,6 @@
 function Background() {
     <>
-        
+
         <head>
             <link rel="stylesheet" href="index.css"></link>
             <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -10,4 +10,4 @@ function Background() {
     </>
 }
 
-export default Background
+export default Background;

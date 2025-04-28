@@ -3,6 +3,7 @@ import './App.css'
 import Sidebar from './components/MainSidebar'
 import Background from './components/Background'
 import Post from './components/Post'
+import Filter from './components/Filter'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Post />
                 <Post />
                 <Post />
+                <Filter />
             </body>
         </>
     )
