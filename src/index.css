@@ -87,5 +87,13 @@ body {
   padding: 10px;
   margin-bottom: 30px;
   font-family: "Montserrat", sans-serif;
+}
 
+.square {
+  height: 20px;
+  width: 20px;
+  background-color: gold;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
 }
