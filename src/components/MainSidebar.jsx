@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
         <>
             <div class="sidebar">
-                <a href="#"><h1>Plenty O' Friends</h1></a>
+                <Link to="/"><h1>Plenty O' Friends</h1></Link>
                 <nav>
-                    <a href="#" class="current"><span class="square"></span>Home</a>
+                    <Link to="/"><span class="square"></span>Home</Link>
                     <a href="#"><span class="square"></span>Search</a>
-                    <a href="#"><span class="square"></span>Messages</a>
+                    <Link to="/Messages"><span class="square"></span>Messages</Link>
                     <a href="#"><span class="square"></span>Notifications</a>
-                    <a href="#"><span class="square"></span>Create Post</a>
-                    <a href="#"><span class="square"></span>My Profile</a>
+                    <Link to="/CreatePost"><span class="square"></span>Create Post</Link>
+                    <Link to="/MyProfile"><span class="square"></span>My Profile</Link>
                 </nav>
             </div>
         </>

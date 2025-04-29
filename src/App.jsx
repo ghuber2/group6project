@@ -5,19 +5,22 @@ import Background from './components/Background'
 import Post from './components/Post'
 import Filter from './components/Filter'
 
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import HomePage from './Pages/home'
+import CreatePost from './Pages/CreatePost'
+import MyProfile from './Pages/MyProfile'
+import Messages from './Pages/Messages'
+
 function App() {
     return (
-        <>
-            <body>
-                <Background />
-                <Sidebar />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Filter />
-            </body>
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/CreatePost" element={<CreatePost />} />
+                <Route path="/MyProfile" element={<MyProfile />} />
+                <Route path="/Messages" element={<Messages />} />
+            </Routes>
+        </Router>
     )
 }
 
