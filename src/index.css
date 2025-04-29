@@ -7,6 +7,15 @@ h1 {
   padding-left: 5px;
 }
 
+h2 {
+  color: black;
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 5px;
+}
+
 .sidebar {
   flex-direction: column;
   border-right: 2px solid black;
@@ -17,7 +26,7 @@ h1 {
   margin-left: -100px;
 }
 
-.sidebar nav {
+.sidebar .navbar {
   display: flex;
   flex-direction: column;
   padding: 5px;
@@ -26,7 +35,7 @@ h1 {
   gap: 50px;
 }
 
-.sidebar nav a {
+.sidebar .navbar a {
   display: flex;
   text-decoration: none;
   gap: 10px;
@@ -42,8 +51,26 @@ h1 {
 
 }
 
-.sidebar nav a:hover {
+.sidebar .navbar a:hover {
   background-color: #FFA07A;
+}
+
+.square {
+  height: 20px;
+  width: 20px;
+  background-color: gold;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.current .square {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  background-color: red;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 body {
@@ -89,13 +116,25 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.square {
-  height: 20px;
-  width: 20px;
-  background-color: gold;
-  display: inline-block;
+.profile-info {
+  background-color: #FFA07A;
+  margin-left: 200px;
+  padding: 10px;
+}
+
+.profile-picture {
+  flex-direction: column;
+  background-color: white;
   border: 2px solid black;
-  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
 }
 
 .filter {

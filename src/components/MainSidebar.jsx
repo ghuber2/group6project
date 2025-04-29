@@ -5,7 +5,7 @@ function Sidebar() {
         <>
             <div class="sidebar">
                 <Link to="/"><h1>Plenty O' Friends</h1></Link>
-                <nav>
+                <nav class="navbar">
                     <Link to="/"><span class="square"></span>Home</Link>
                     <a href="#"><span class="square"></span>Search</a>
                     <Link to="/Messages"><span class="square"></span>Messages</Link>
