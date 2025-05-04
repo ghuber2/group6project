@@ -23,7 +23,6 @@ h2 {
   height: 100vh;
   position: fixed;
   display: flex;
-  margin-left: -100px;
 }
 
 .sidebar .navbar {
@@ -87,7 +86,6 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-left: 250px;
 }
 
 .avatar {
@@ -105,11 +103,18 @@ body {
   flex-shrink: 0;
 }
 
+.post-filter {
+  display: flex;
+  margin-left: 300px;
+  padding: 20px;
+  gap: 40px;
+}
+
 .post-info {
   background-color: white;
   border-radius: 10px;
   border: 2px solid black;
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   padding: 10px;
   margin-bottom: 30px;
@@ -117,8 +122,9 @@ body {
 }
 
 .profile-info {
-  background-color: #FFA07A;
-  margin-left: 200px;
+  /* background-color: #FFA07A; */
+  background-color: #ffdfb5;
+  margin-left: 300px;
   padding: 10px;
 }
 
@@ -142,7 +148,7 @@ body {
   flex: 1;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 100px;
+  width: 200px;
 }
 
 .filter button {
@@ -171,5 +177,4 @@ body {
   font-style: normal;
   color: black;
   margin-right: 35px;
-
 }

@@ -8,9 +8,17 @@ function HomePage() {
         <>
             <Background />
             <Sidebar />
-            <Post />
-            <Post />
-            <Filter />
+            <div class="post-filter">
+                <div>
+                    <Post />
+                    <Post />
+                    <Post />
+                    <Post />
+                </div>
+
+                <Filter />
+            </div>
+
         </>
     )
 }
