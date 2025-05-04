@@ -103,11 +103,19 @@ body {
   flex-shrink: 0;
 }
 
+/* - needed to add this so we can control the column of posts since filter and posts are technically siblings in a flexbox */
+.posts {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+
 .post-filter {
   display: flex;
   margin-left: 300px;
   padding: 20px;
   gap: 40px;
+
 }
 
 .post-info {
