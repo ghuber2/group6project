@@ -9,7 +9,7 @@ function HomePage() {
             <Background />
             <Sidebar />
             <div class="post-filter">
-                <div>
+                <div class="posts">
                     <Post />
                     <Post />
                     <Post />
