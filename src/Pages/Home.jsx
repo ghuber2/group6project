@@ -15,7 +15,6 @@ function HomePage() {
                     <Post />
                     <Post />
                 </div>
-
                 <Filter />
             </div>
 
