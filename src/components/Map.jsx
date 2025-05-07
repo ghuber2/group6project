@@ -31,7 +31,7 @@ export default function Map({ setCoordinates }) {
     }, [setCoordinates]);
 
     return <div style={{ overflow: "hidden", height: 460, width: 700, borderRadius: 12 }}>
-        {/contains map/}
+        {/* {/contains map/} */}
         <div ref={mapContainerRef} style={{ height: 500, width: 700 }} />
     </div>;
 }
