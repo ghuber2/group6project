@@ -36,7 +36,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("sentMessage", (data) =>{
-      socket.to(data.room).emit("message_received",data);
+      io.to(data.room).emit("message_received",data);
   })
 
  
