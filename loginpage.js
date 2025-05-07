@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const socket= io.connect("http://localhost:3001");
+
 
 function LoginPage({login}){
     const[user, setUser]= useState('');
@@ -16,8 +16,8 @@ function LoginPage({login}){
       const navigate=useNavigate('');
       const click = async (e) => {
         e.preventDefault();
-      
-        const res = await fetch('http://localhost:3001/login', {
+      //eventually replace this
+        const res = await fetch('http://192.168.1.153:3001/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -29,7 +29,9 @@ function LoginPage({login}){
         });
       
         const data = await res.json();
-        navigate('/messages', { state: { username: data.username } });
+
+        localStorage.setItem('username', data.username);
+        navigate('/messages');
         alert(`Login successful:\n${JSON.stringify(data, null, 2)}`);
       };
       const Userchange = event =>{

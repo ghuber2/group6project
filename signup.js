@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-const socket= io.connect("http://localhost:3001");
+
 
 function Signup({signup}){
 
@@ -13,8 +13,8 @@ function Signup({signup}){
       const[email, setEmail]= useState('');
       const click = async (e) => {
         e.preventDefault();
-      
-        const res = await fetch('http://localhost:3001/add-user', {
+      //this too
+        const res = await fetch('http://192.168.1.153:3001/add-user', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

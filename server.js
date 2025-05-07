@@ -16,7 +16,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", 
+    origin: "*", //eventually replace this with localhost 
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -32,6 +32,7 @@ io.on("connection", (socket) => {
   })
 
   socket.on("chat_message", (msg) => {
+    //console.log(msg);
     io.emit("chat message", msg);
   });
 
@@ -50,7 +51,7 @@ io.on("connection", (socket) => {
 mongoose.connect(mongoIRL)
   .then(() => {
     console.log('MongoDB connected');
-    server.listen(3001, () => {
+    server.listen(3001, '0.0.0.0', () => {
       console.log('Server running on port 3001');
     });
   })
@@ -70,6 +71,22 @@ app.post('/add-user', (req, res) => {
     .then((result) => res.send(result))
     .catch((err) => console.log(err));
 });
+
+app.post('/create-post', (req, res)=>{
+  const {lat, long, description, title,time,date,username}= req.body;
+  const postData= new post({
+    lat: lat,
+    long: long,
+    description: description,
+    title: title,
+    time:time,
+    date:date,
+    username: username
+  })
+  postData.save()
+    .then((result)=> res.send(result))
+    .catch((err)=> console.log(err));
+})
 
 
 app.post('/login', async (req, res) => {

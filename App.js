@@ -7,7 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import Usermessage from './pages/message'
 import Signup from './pages/signup'
 import LoginPage from './pages/loginpage'
-import User from './backend/model/User_date';
+import MessagePost from './pages/post';
+
 
 
 
@@ -27,6 +28,7 @@ function App({user}) {
         <Route path="/" element={<LoginPage/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/messages" element={<Usermessage/>}/>
+        <Route path="/post" element={<MessagePost/>}/>
 
       </Routes>
     </Router>
