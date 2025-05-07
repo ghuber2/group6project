@@ -6,7 +6,7 @@ import Post from './components/Post'
 import Filter from './components/Filter'
 
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
-import HomePage from './Pages/home'
+import Home from './Pages/Home'
 import CreatePost from './Pages/CreatePost'
 import MyProfile from './Pages/MyProfile'
 import Messages from './Pages/Messages'
@@ -15,7 +15,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/CreatePost" element={<CreatePost />} />
                 <Route path="/MyProfile" element={<MyProfile />} />
                 <Route path="/Messages" element={<Messages />} />

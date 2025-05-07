@@ -3,7 +3,7 @@ import Sidebar from "../components/MainSidebar";
 import Post from "../components/Post";
 import Background from "../components/Background";
 
-function HomePage() {
+function Home() {
     return (
         <>
             <Background />
@@ -22,4 +22,4 @@ function HomePage() {
     )
 }
 
-export default HomePage;
+export default Home;
