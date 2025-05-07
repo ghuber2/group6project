@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-
+// import Searchbar from "./Searchbar";
 function Sidebar() {
     return (
         <>
             <div class="sidebar">
-                <Link to="/"><h1>Plenty O' Friends</h1></Link>
+                <Link to="/" id="page-title">Plenty O' Friends</Link>
                 <nav class="navbar">
+                    {/* <Searchbar /> */}
                     <Link to="/"><span class="square"></span>Home</Link>
                     <Link to="/Messages"><span class="square"></span>Messages</Link>
                     <Link to="/CreatePost"><span class="square"></span>Create Post</Link>

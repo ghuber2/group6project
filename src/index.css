@@ -16,6 +16,19 @@ h2 {
   padding-left: 5px;
 }
 
+/* sidebar css */
+#page-title {
+  text-decoration: none;
+  font-size: 35px;
+  color: black;
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  padding-left: 5px;
+}
+
 .sidebar {
   flex-direction: column;
   border-right: 2px solid black;
@@ -23,6 +36,7 @@ h2 {
   height: 100vh;
   position: fixed;
   display: flex;
+  text-decoration: none;
 }
 
 .sidebar a {
@@ -56,7 +70,6 @@ h2 {
   font-style: normal;
   border-radius: 999px;
   align-items: center;
-
 }
 
 .sidebar .navbar a:hover {
@@ -112,7 +125,7 @@ body {
   flex-shrink: 0;
 }
 
-/* - needed to add this so we can control the column of posts since filter and posts are technically siblings in a flexbox */
+/* POST SECTION CSS - needed to add this so we can control the column of posts since filter and posts are technically siblings in a flexbox */
 .posts {
   display: flex;
   flex-direction: column;
@@ -187,6 +200,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* filter section css */
 .filter {
   display: flex;
   flex: 1;
@@ -221,4 +235,34 @@ body {
   font-style: normal;
   color: black;
   margin-right: 35px;
+}
+
+/* search bar css */
+.search-bar-container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: white;
+  height: 35px;
+  align-items: center;
+  box-shadow: 0px 0px 8px gray;
+}
+
+#search-box {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  margin-left: 5px;
+
+}
+
+#search-box:focus {
+  outline: none;
+}
+
+#search-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
 }
