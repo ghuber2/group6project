@@ -1,4 +1,4 @@
-// import Sidebar from "../components/MainSidebar";
+import Sidebar from "../components/MainSidebar";
 // import Background from "../components/Background";
 
 // function CreatePost() {
@@ -77,40 +77,47 @@ const CreatePost = () => {
     };
 
     return (
-        <div>
-            <h2>Create New Post</h2>
-            <form onSubmit={handleSubmit}>
-                <input placeholder="Post Name" required onChange={e => setFormData({ ...formData, title: e.target.value })} /><br />
-                <textarea placeholder="Description" required onChange={e => setFormData({ ...formData, description: e.target.value })} /><br />
-                <input type="date" required onChange={e => setFormData({ ...formData, date: e.target.value })} />
-                <input type="time" required onChange={e => setFormData({ ...formData, time: e.target.value })} /><br />
+        <>
+            <Sidebar />
+            <div>
+                <h2>Create New Post</h2>
+                <div style={{
+                    marginLeft: "300px"
+                }}>
+                <form onSubmit={handleSubmit}>
+                    <input placeholder="Post Name" required onChange={e => setFormData({ ...formData, title: e.target.value })} /><br />
+                    <textarea placeholder="Description" required onChange={e => setFormData({ ...formData, description: e.target.value })} /><br />
+                    <input type="date" required onChange={e => setFormData({ ...formData, date: e.target.value })} />
+                    <input type="time" required onChange={e => setFormData({ ...formData, time: e.target.value })} /><br />
 
-                <label>Academic Building?</label>
-                <select onChange={e => setUseBuilding(e.target.value === "yes")}>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select><br />
+                    <label>Academic Building?</label>
+                    <select onChange={e => setUseBuilding(e.target.value === "yes")}>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select><br />
 
-                {useBuilding ? (
-                    <>
-                        <label>Choose Building:</label>
-                        <select required onChange={handleBuildingChange}>
-                            <option value="">-- Select --</option>
-                            <option value="YR">YR</option>
-                            <option value="SC">SC</option>
-                            <option value="LA">LA</option>
-                        </select><br />
-                        <input placeholder="Room Number" required onChange={e => setFormData({ ...formData, room: e.target.value })} />
-                    </>
-                ) : (
-                    <MapboxMap setCoordinates={(lng, lat) => setCoords({ lng, lat })} />
-                )}
-                <br />
-                <button type="submit">Confirm Post</button>
-            </form>
+                    {useBuilding ? (
+                        <>
+                            <label>Choose Building:</label>
+                            <select required onChange={handleBuildingChange}>
+                                <option value="">-- Select --</option>
+                                <option value="YR">YR</option>
+                                <option value="SC">SC</option>
+                                <option value="LA">LA</option>
+                            </select><br />
+                            <input placeholder="Room Number" required onChange={e => setFormData({ ...formData, room: e.target.value })} />
+                        </>
+                    ) : (
+                        <MapboxMap setCoordinates={(lng, lat) => setCoords({ lng, lat })} />
+                    )}
+                    <br />
+                    <button type="submit">Confirm Post</button>
+                </form>
+                </div>
 
-            {showModal && postData && <Modal post={postData} onClose={handleCloseModal} />}
-        </div>
+                {showModal && postData && <Modal post={postData} onClose={handleCloseModal} />}
+            </div>
+        </>
     );
 };
 
