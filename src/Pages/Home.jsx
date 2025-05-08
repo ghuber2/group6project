@@ -124,7 +124,10 @@ const Home = () => {
                                 borderRadius: 12,
                                 boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
                                 cursor: 'pointer',
-                                marginBottom: 20
+                                marginBottom: 20,
+                                fontFamily: "Montserrat, sans-serif",
+                                fontWeight: 700,
+                                fontStyle: "normal"
                             }}
                         >
                             <h3>{post.title}</h3>
