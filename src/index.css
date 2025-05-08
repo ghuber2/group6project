@@ -296,6 +296,18 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.create-post-form button  {
+  border-radius: 20px;
+  background-color: #FFA07A;
+  border-color: black;
+  font-weight: bold;
+}
+
+.create-post-form button:hover {
+  cursor: pointer;
+  background-color: #FF7F50;
+}
+
 .create-post-form label {
   font-family: "Montserrat", sans-serif;
 }
