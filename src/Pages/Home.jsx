@@ -101,7 +101,7 @@ const Home = () => {
     return (
         <>
             <Sidebar />
-            <div>
+            <div class="main-posts">
                 <h2>Campus Posts</h2>
                 <div
                     style={{
@@ -112,7 +112,7 @@ const Home = () => {
                         borderRadius: 8,
                         padding: 12,
                         marginBottom: 20,
-                        marginLeft: '300px'
+
                     }}>
                     {dummyPosts.map((post, index) => (
                         <div

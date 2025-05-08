@@ -1,6 +1,7 @@
 h1 {
+  font-size: 40px;
   color: black;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   font-family: Brush Script MT, Brush Script Std, cursive;
   font-weight: 400;
   font-style: normal;
@@ -13,7 +14,8 @@ h2 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding-left: 5px;
+  text-align: center;
+  padding-right: 10px;
 }
 
 /* sidebar css */
@@ -130,6 +132,10 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 2;
+}
+
+.main-posts {
+  margin-left: 300px;
 }
 
 .post-filter {
@@ -265,4 +271,35 @@ body {
   width: 16px;
   height: 16px;
   margin-left: 5px;
+}
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #ffdfb5;
+  border-radius: 8px;
+  margin-left: 300px;
+}
+
+.create-post-form input,
+.create-post-form textarea,
+.create-post-form select,
+.create-post-form button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.create-post-form label {
+  font-family: "Montserrat", sans-serif;
+}
+
+.post-created p {
+  font-family: "Montserrat", sans-serif;
 }

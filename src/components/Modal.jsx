@@ -4,19 +4,22 @@ const Modal = ({ post, onClose }) => (
     }}>
         {console.log("Post in modal:", post)}
 
-        <h3>Post Created!</h3>
-        <p><strong>Title:</strong> {post.title}</p>
-        <p><strong>Description:</strong> {post.description}</p>
+        <h2>Post Created!</h2>
 
-        {post.lat && post.lng && (
-            <p><strong>Location:</strong> ({post.lng}, {post.lat})</p>
-        )}
+        <div class="post-created">
+            <p><strong>Title:</strong> {post.title}</p>
+            <p><strong>Description:</strong> {post.description}</p>
 
-        <p><strong>Date:</strong> {post.date}</p>
-        <p><strong>Time:</strong> {post.time}</p>
+            {post.lat && post.lng && (
+                <p><strong>Location:</strong> ({post.lng}, {post.lat})</p>
+            )}
+
+            <p><strong>Date:</strong> {post.date}</p>
+            <p><strong>Time:</strong> {post.time}</p>
 
 
-        <button onClick={onClose}>Close</button>
+            <button onClick={onClose}>Close</button>
+        </div>
     </div>
 );
 

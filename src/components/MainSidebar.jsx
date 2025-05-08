@@ -4,7 +4,7 @@ function Sidebar() {
     return (
         <>
             <div class="sidebar">
-                <Link to="/" id="page-title">Plenty O' Friends</Link>
+                <Link to="/" id="page-title"><h1>Plenty O' Friends</h1></Link>
                 <nav class="navbar">
                     {/* <Searchbar /> */}
                     <Link to="/"><span class="square"></span>Home</Link>
