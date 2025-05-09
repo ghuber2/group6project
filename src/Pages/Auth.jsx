@@ -6,7 +6,8 @@ import {
   Routes,
   Route,
   Link,
-  useNavigate
+  useNavigate,
+  Navigate
 } from 'react-router-dom';
 
 // Base API URL, configured via Vite environment variable
@@ -38,7 +39,7 @@ const LoginPage = () => {
       // Store username locally
       localStorage.setItem('username', data.username);
       // Navigate to messages, passing username in location state
-      navigate('/messages', { state: { username: data.username } });
+      navigate('/Home', { state: { username: data.username } });
     } catch (err) {
       alert(err.message);
     }
@@ -137,15 +138,16 @@ const SignupPage = () => {
 // Main Auth router component
 export default function Auth() {
   return (
-    <Router>
+    <div>
       <nav>
         <Link to="/login">Login</Link> |{' '}
         <Link to="/signup">Sign Up</Link>
       </nav>
       <Routes>
+        <Route path = "/" element ={ <Navigate to="login" replace />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
-    </Router>
+    </div>
   );
 }

@@ -16,8 +16,8 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Login" element={<Auth />} />
+                <Route path="/Home" element={<Home />} />
+                <Route path="/" element={<Auth />} />
                 <Route path="/CreatePost" element={<CreatePost />} />
                 <Route path="/MyProfile" element={<MyProfile />} />
                 <Route path="/Messages" element={<Messages />} />

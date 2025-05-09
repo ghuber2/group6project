@@ -7,7 +7,7 @@ function Sidebar() {
                 <Link to="/" id="page-title"><h1>Plenty O' Friends</h1></Link>
                 <nav class="navbar">
                     {/* <Searchbar /> */}
-                    <Link to="/"><span class="square"></span>Home</Link>
+                    <Link to="/Home"><span class="square"></span>Home</Link>
                     <Link to="/Messages"><span class="square"></span>Messages</Link>
                     <Link to="/CreatePost"><span class="square"></span>Create Post</Link>
                     <Link to="/MyProfile"><span class="square"></span>My Profile</Link>
