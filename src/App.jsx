@@ -11,6 +11,7 @@ import CreatePost from './Pages/CreatePost'
 import MyProfile from './Pages/MyProfile'
 import Messages from './Pages/Messages'
 import Auth from './Pages/Auth'
+import AcctCreation from './Pages/AcctCreation'
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
             <Routes>
                 <Route path="/Home" element={<Home />} />
                 <Route path="/" element={<Auth />} />
+                <Route path="/signup" element={<AcctCreation />} />
                 <Route path="/CreatePost" element={<CreatePost />} />
                 <Route path="/MyProfile" element={<MyProfile />} />
                 <Route path="/Messages" element={<Messages />} />

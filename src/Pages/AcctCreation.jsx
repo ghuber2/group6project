@@ -1,16 +1,15 @@
-// src/pages/LoginPage.jsx
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // TODO: implement actual login logic
-    alert(`Logging in with:\nUsername: ${username}\nPassword: ${password}`);
+    alert(`Logging in with:\nUsername: ${username}\nPassword: ${password}\n Email:${email}`);
   };
 
   return (
@@ -39,6 +38,19 @@ export default function LoginPage() {
             style={{ width: '100%', padding: '8px', marginTop: '4px' }}
           />
         </div>
+        
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{ width: '100%', padding: '8px', marginTop: '4px' }}
+          />
+        </div>
+
         <button
           type="submit"
           style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px' }}
@@ -47,7 +59,7 @@ export default function LoginPage() {
         </button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
+        Already have an account? <Link to="/">Log in</Link>
       </p>
     </div>
   );
