@@ -10,7 +10,7 @@ import io from "socket.io-client";
 import { clear } from '@testing-library/user-event/dist/clear';
 
 // Establish a socket connection to the server
-const socket = io.connect("http://192.168.1.153:3001");
+const socket = io.connect("http://localhost:3001");
 
 // Define the Usermessage component
 function Usermessage() {

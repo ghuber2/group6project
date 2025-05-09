@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection string (replace credentials and DB name as needed)
-const mongoIRL = 'mongodb+srv://flyingtoilet97:yCizzlNpN9PElygX@cluster0.irgu22p.mongodb.net/Cluster0';
+const mongoIRL = 'mongodb://localhost:27017/testDB';
 
 // Import Mongoose models for Users and Posts
 const User = require('./model/User_date');

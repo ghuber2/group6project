@@ -23,7 +23,7 @@ function LoginPage({ login }) {
     e.preventDefault();
 
     // Send a POST request to the login endpoint with the username and password
-    const res = await fetch('http://192.168.1.153:3001/login', {
+    const res = await fetch('http://localhost:3001/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

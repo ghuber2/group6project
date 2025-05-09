@@ -23,7 +23,7 @@ function Signup({ signup }) {
     e.preventDefault();
 
     // Send POST request to the server with the signup data
-    const res = await fetch('http://192.168.1.153:3001/add-user', {
+    const res = await fetch('http://localhost:3001/add-user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

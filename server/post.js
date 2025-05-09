@@ -46,7 +46,7 @@ function MessagePost() {
     e.preventDefault();
 
     // Send POST request to backend to create a new post
-    const res = await fetch('http://192.168.1.153:3001/create-post', {
+    const res = await fetch('http://localhost:3001/create-post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
