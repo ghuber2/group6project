@@ -17,7 +17,7 @@ export default function LoginPage() {
       const res = await fetch('https://group6project.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }) //Send username and password
+        body: JSON.stringify({  username:username, password: password}) //Send username and password
       });
       
       //If login failed, show an error
