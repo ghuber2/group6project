@@ -10,7 +10,11 @@ const { Server } = require('socket.io');        // Socket.IO for real-time webso
 // Initialize Express app
 const app = express();
 // Enable CORS to allow requests from any origin (you can restrict this in production)
-app.use(cors());
+app.use(cors({
+    origin: 'https://group6project-1.onrender.com', 
+    methods: ['GET', 'POST'],
+    credentials: true
+}));
 // Middleware to parse JSON bodies in incoming requests
 app.use(express.json());
 
@@ -28,7 +32,7 @@ const server = http.createServer(app);
 // Configure CORS on sockets: allow any origin, GET/POST methods
 const io = new Server(server, {
   cors: {
-    origin: "*", // TODO: replace with specific origin like 'http://localhost:3000'
+    origin: "https://group6project-1.onrender.com", // TODO: replace with specific origin like 'http://localhost:3000'
     methods: ["GET", "POST"],
     credentials: true
   }
