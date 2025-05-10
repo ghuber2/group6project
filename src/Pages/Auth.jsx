@@ -14,7 +14,7 @@ export default function LoginPage() {
     // TODO: implement actual login logic
     try {
       //Sends a POST request to the backend login route
-      const res = await fetch('http://localhost:3001/login', {
+      const res = await fetch('https://group6project.onrender.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }) //Send username and password
@@ -32,7 +32,6 @@ export default function LoginPage() {
       navigate('/Home');
     } catch (err) {
       //Show error message if log in fails
-      console.log("skibidi toilet");
       setError(err.message);
     }
   };
