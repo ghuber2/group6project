@@ -12,7 +12,7 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       //Send a POST request to the backend to create the user
-      const res = await fetch('http://localhost:3001/add-user', {
+      const res = await fetch('https://group6project.onrender.com/login/add-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username:username, email:email, password: password }) //Send form data
