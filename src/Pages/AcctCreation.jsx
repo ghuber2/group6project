@@ -15,7 +15,7 @@ export default function LoginPage() {
       const res = await fetch('http://localhost:3001/add-user', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, email, password }) //Send form data
+        body: JSON.stringify({ username:username, email:email, password: password }) //Send form data
       });
       
       //If creation failed, throw error

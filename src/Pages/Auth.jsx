@@ -19,7 +19,7 @@ export default function LoginPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }) //Send username and password
       });
-
+      
       //If login failed, show an error
       if (!res.ok) {
         const text = await res.text();
@@ -32,6 +32,7 @@ export default function LoginPage() {
       navigate('/Home');
     } catch (err) {
       //Show error message if log in fails
+      console.log("skibidi toilet");
       setError(err.message);
     }
   };
