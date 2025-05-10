@@ -22,27 +22,36 @@ function LoginPage({ login }) {
     // Prevent the default form submission behavior (page refresh)
     e.preventDefault();
 
-    // Send a POST request to the login endpoint with the username and password
-    const res = await fetch('http://localhost:3001/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: user,
-        password: pass
-      })
-    });
+    try {
+      // Send a POST request to the login endpoint with the username and password
+      const res = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: user,
+          password: pass
+        })
+      });
 
-    // Parse the JSON response from the server
-    const data = await res.json();
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || 'Signup failed');
+      }
 
-    // Save the returned username to localStorage for later use
-    localStorage.setItem('username', data.username);
-    // Navigate to the /messages route upon successful login
-    navigate('/messages');
-    // Show an alert confirming the successful login and display returned data
-    alert(`Login successful:\n${JSON.stringify(data, null, 2)}`);
+      // Parse the JSON response from the server
+      const data = await res.json();
+
+      // Save the returned username to localStorage for later use
+      localStorage.setItem('username', data.username);
+      // Navigate to the /messages route upon successful login
+      navigate('/messages');
+      // Show an alert confirming the successful login and display returned data
+      alert(`Login successful:\n${JSON.stringify(data, null, 2)}`);
+    } catch (err) {
+      alert('Login failed: ' + err.message);
+    }
   };
 
   // Handler for username input changes; updates the `user` state
@@ -72,7 +81,7 @@ function LoginPage({ login }) {
         <label>Enter Password</label>
         {/* Controlled input for password */}
         <input
-          type="text"
+          type="password"
           required
           value={pass}
           onChange={Passchange}

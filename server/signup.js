@@ -17,15 +17,16 @@ function Signup({ signup }) {
   // State to hold the entered email
   const [email, setEmail] = useState('');
 
+  const navigate = useNavigate() //for redirecting after signup
   // Handler for form submission to register a new user
   const click = async (e) => {
     // Prevent page reload on form submit
     e.preventDefault();
-
-    // Send POST request to the server with the signup data
-    const res = await fetch('http://localhost:3001/add-user', {
-      method: 'POST',
-      headers: {
+    try {
+      // Send POST request to the server with the signup data
+      const res = await fetch('http://localhost:3001/add-user', {
+        method: 'POST',
+          headers: {
         'Content-Type': 'application/json'
       },
       // Convert state values into JSON string for the request body
@@ -34,13 +35,22 @@ function Signup({ signup }) {
         email: email,
         password: pass
       })
-    });
+      });
 
-    // Parse the JSON response from the server
-    const data = await res.json();
+      if(!res.ok) {
+        const text = await res.text();
+        throw new Error(text || 'Signup failed');
+      }
 
-    // Show an alert confirming successful signup, displaying returned data
-    alert(`Signup successful:\n${JSON.stringify(data, null, 2)}`);
+      // Parse the JSON response from the server
+      const data = await res.json();
+
+      // Show an alert confirming successful signup, displaying returned data
+      alert(`Signup successful:\n${JSON.stringify(data, null, 2)}`);
+      navigate('/');
+    } catch(err) {
+      alert('Signup failed: ' + err.message);
+    }
   };
 
   // Update `user` state when the username input changes
@@ -75,7 +85,7 @@ function Signup({ signup }) {
         <label>Enter Password</label>
         {/* Controlled input for password */}
         <input
-          type="text"
+          type="password"
           required
           value={pass}
           onChange={Passchange}

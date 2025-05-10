@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: implement actual login logic
-    alert(`Logging in with:\nUsername: ${username}\nPassword: ${password}\n Email:${email}`);
+    try {
+      //Send a POST request to the backend to create the user
+      const res = await fetch('http://localhost:3001/add-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password }) //Send form data
+      });
+      
+      //If creation failed, throw error
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || 'Signup failed');
+      }
+
+      //Parse response and show success alert
+      const data = await res.json();
+      alert(`Account created for ${data.username}`);
+      navigate('/'); //redirect to login page
+    } catch (err) {
+      setError(err.message); //error if signup fails
+    }
   };
 
   return (
@@ -50,6 +71,8 @@ export default function LoginPage() {
             style={{ width: '100%', padding: '8px', marginTop: '4px' }}
           />
         </div>
+
+        {error && <p style={{ color: 'red', fontSize: '0.9em'}} >{error}</p>}
 
         <button
           type="submit"
