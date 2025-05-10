@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection string (replace credentials and DB name as needed)
-const mongoIRL = 'mongodb://localhost:27017/TestingDatabase';
+const mongoIRL = 'mongodb+srv://flyingtoilet97:yCizzlNpN9PElygX@cluster0.irgu22p.mongodb.net/Cluster0';
 
 // Import Mongoose models for Users and Posts
 const User = require('./model/User_date');
@@ -119,10 +119,12 @@ app.post('/create-post', (req, res) => {
 // Route to authenticate a user (login)
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
+  console.log(username+password);
 
   try {
     // Look up the user by username
     const user = await User.findOne({ username });
+    
 
     // If user not found, send 401 Unauthorized
     if (!user) {
