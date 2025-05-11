@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection string (replace credentials and DB name as needed)
-const mongoIRL = 'mongodb://localhost:27017/TestingDatabase';
+const mongoIRL = 'mongodb://localhost:27017/testDB';
 
 // Import Mongoose models for Users and Posts
 const User = require('./model/User_date');
@@ -112,8 +112,14 @@ app.post('/create-post', (req, res) => {
 
   // Save post to MongoDB and respond with the created document
   postData.save()
-    .then((result) => res.send(result))
-    .catch((err) => console.log('Error saving post:', err));
+    .then(result => {
+      console.log('✅ Post created successfully:', result);
+      res.status(201).json(result);
+    })
+    .catch(err => {
+      console.error('❌ Error saving post:', err);
+      res.status(500).json({ error: err.message });
+    });
 });
 
 // Route to authenticate a user (login)
