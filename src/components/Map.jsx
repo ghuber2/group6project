@@ -25,7 +25,7 @@ export default function Map({ setCoordinates }) {
 
         marker.on("dragend", () => {
             const { lng, lat } = marker.getLngLat();
-            setCoordinates(lng.toFixed(4), lat.toFixed(4));
+            setCoordinates(parseFloat(lng.toFixed(4)), parseFloat(lat.toFixed(4)));
         });
 
     }, [setCoordinates]);
