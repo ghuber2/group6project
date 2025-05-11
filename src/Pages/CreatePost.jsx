@@ -143,7 +143,7 @@ export default function CreatePost() {
               />
             </>
           ) : (
-            <MapboxMap setCoordinates={(lat, long) => setCoords({ lat, long })} />
+            <MapboxMap setCoordinates={(long, lat) => setCoords({ long, lat })} />
           )}<br/>
 
           <button type="submit">Confirm Post</button>
