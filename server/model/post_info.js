@@ -3,11 +3,11 @@ const Schema=mongoose.Schema;
 
 const postInfo = new Schema({
     lat: {
-        type: float,
+        type: Number,
         required: true
     },
     long: {
-        type: float,
+        type: Number,
         required: true
     },
     description:{
