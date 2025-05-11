@@ -8,7 +8,7 @@ import Modal from '../components/Modal';
 import MapboxMap from '../components/Map';
 
 // init socket
-const socket = io('https://group6project.onrender.com/');
+const socket = io('https://group6project.onrender.com');
 
 export default function CreatePost() {
   const [useBuilding, setUseBuilding] = useState(true);
