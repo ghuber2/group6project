@@ -135,7 +135,7 @@ app.get('/create-post', async (req, res) => {
 // Route to authenticate a user (login)
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  console.log(username+password);
+  //console.log(username+password);
 
   try {
     // Look up the user by username
