@@ -71,7 +71,7 @@ export default function CreatePost() {
 
     // REST call
     try {
-      const res = await fetch('http://localhost:3001/create-post', {
+      const res = await fetch('https://group6project.onrender.com/create-post', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
