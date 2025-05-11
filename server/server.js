@@ -113,14 +113,20 @@ app.post('/create-post', (req, res) => {
   // Save post to MongoDB and respond with the created document
   postData.save()
     .then(result => {
-      console.log('✅ Post created successfully:', result);
+      console.log('Post created successfully:', result);
       res.status(201).json(result);
     })
     .catch(err => {
-      console.error('❌ Error saving post:', err);
+      console.error('Error saving post:', err);
       res.status(500).json({ error: err.message });
     });
 });
+
+app.get('/create-post', async (req, res) => {
+  const all = await post.find().sort({ date: -1, time: -1 });
+  res.json(all);
+});
+
 
 // Route to authenticate a user (login)
 app.post('/login', async (req, res) => {
