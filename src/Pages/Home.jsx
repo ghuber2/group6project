@@ -11,7 +11,7 @@ export default function Home() {
     // Load posts from the database
     async function loadPosts() {
       try {
-        const res = await fetch('http://localhost:3001/create-post');
+        const res = await fetch('https://group6project.onrender.com/create-post');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
 
