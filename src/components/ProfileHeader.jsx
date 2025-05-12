@@ -28,6 +28,20 @@ export default function ProfileHeader() {
     loadMyPosts();
   }, [username]);
 
+  const handleDelete = async (id) => {
+    const confirm = window.confirm('Delete this post?');
+    if (!confirm) return;
+    try {
+      const res = await fetch(`http://localhost:3001/create-post/${id}`, {
+        method: 'DELETE'
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setPosts(prev => prev.filter(p => p._id !== id));
+    } catch (err) {
+      console.error('Failed to delete post:', err);
+    }
+  };
+
   return (
     <>
       <header className="profile" style={{ padding: 20, borderBottom: '1px solid #ccc' }}>
@@ -47,7 +61,7 @@ export default function ProfileHeader() {
           </div>
           <div className="profile-details">
             <h2>My Profile</h2>
-            <h3>Logged in as <strong>{username}</strong></h3>
+            <p>Logged in as <strong>{username}</strong></p>
           </div>
         </div>
       </header>
@@ -66,8 +80,25 @@ export default function ProfileHeader() {
         {posts.length === 0 ? (
           <p>You haven’t made any posts yet.</p>
         ) : (
-          posts.map((post, i) => (
-            <Post key={post._id || i} post={post} />
+          posts.map((post, idx) => (
+            <div key={post._id || idx} style={{ position: 'relative', marginBottom: 16 }}>
+              <Post post={post} />
+              <button
+                onClick={() => handleDelete(post._id)}
+                style={{
+                  position: 'absolute',
+                  top: 8,
+                  right: 8,
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: 14,
+                  color: '#e00'
+                }}
+              >
+                Delete
+              </button>
+            </div>
           ))
         )}
       </div>

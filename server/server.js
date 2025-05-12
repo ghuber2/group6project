@@ -127,6 +127,16 @@ app.get('/create-post', async (req, res) => {
   res.json(all);
 });
 
+//delete post
+app.delete('/create-post/:id', async (req, res) => {
+  try {
+    await post.findByIdAndDelete(req.params.id);
+    return res.sendStatus(204);
+  } catch (err) {
+    console.error('Error deleting post:', err);
+    return res.status(500).json({ error: err.message });
+  }
+});
 
 // Route to authenticate a user (login)
 app.post('/login', async (req, res) => {

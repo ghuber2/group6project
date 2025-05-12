@@ -11,6 +11,7 @@ function Sidebar() {
                     <Link to="/Messages"><span class="square"></span>Messages</Link>
                     <Link to="/CreatePost"><span class="square"></span>Create Post</Link>
                     <Link to="/MyProfile"><span class="square"></span>My Profile</Link>
+                    <Link to="/"><span class="square"></span>Logout</Link>
                 </nav>
             </div>
         </>
