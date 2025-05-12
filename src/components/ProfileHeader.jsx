@@ -8,7 +8,7 @@ export default function ProfileHeader() {
   useEffect(() => {
     async function loadMyPosts() {
       try {
-        const res = await fetch('http://localhost:3001/create-post');
+        const res = await fetch('https://group6project.onrender.com/create-post');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const all = await res.json();
 
@@ -32,7 +32,7 @@ export default function ProfileHeader() {
     const confirm = window.confirm('Delete this post?');
     if (!confirm) return;
     try {
-      const res = await fetch(`http://localhost:3001/create-post/${id}`, {
+      const res = await fetch(`https://group6project.onrender.com/create-post/${id}`, {
         method: 'DELETE'
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
