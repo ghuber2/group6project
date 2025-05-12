@@ -78,7 +78,7 @@ export default function LoginPage() {
           type="submit"
           style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px' }}
         >
-          Log In
+          Register
         </button>
       </form>
       <p style={{ textAlign: 'center', marginTop: '15px' }}>
