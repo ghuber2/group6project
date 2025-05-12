@@ -44,7 +44,7 @@ export default function Home() {
             maxHeight: '800px',
             overflowY: 'auto',
             paddingRight: 8,
-            border: '1px solid #ddd',
+            border: '1px solid black',
             borderRadius: 8,
             padding: 12,
             marginBottom: 20

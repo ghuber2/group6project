@@ -51,13 +51,13 @@ export default function Messages() {
     <>
       <Background />
       <Sidebar />
-      <div style={{ padding: '20px' }}>
+      <div className="messages-container">
         <h1>Messages</h1>
         <h2>Welcome, {username}</h2>
         <section>
-          <p>Live Chat</p>
+          <p className="messages-sub-header">Live Chat</p>
           {messageList.map((msg, idx) => (
-            <div key={idx}>
+            <div id="live-message-container" key={idx}>
               <strong>{msg.username}</strong>
               <p>{msg.message}</p>
               <small>{time}</small>
@@ -65,15 +65,16 @@ export default function Messages() {
           ))}
         </section>
         <form onSubmit={(e) => e.preventDefault()}>
-          <label htmlFor="messageInput">Enter Message</label>
+          <label className="messages-sub-header" htmlFor="messageInput">Enter Message: </label>
           <input
             id="messageInput"
             type="text"
+            placeholder='Enter Message'
             required
             value={message}
             onChange={handleChange}
           />
-          <button type="button" onClick={sendMessage}>&#9658;</button>
+          <button type="button" onClick={sendMessage}>Send</button>
         </form>
       </div>
     </>

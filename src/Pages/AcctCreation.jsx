@@ -79,7 +79,7 @@ export default function LoginPage() {
         )}
 
         <button type="submit" className="form-button">
-          Log In
+          Register
         </button>
       </form>
       <p className="form-footer">

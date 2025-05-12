@@ -327,7 +327,6 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-style: normal;
-  
 }
 
 .form-title {
@@ -363,7 +362,6 @@ body {
   border-radius: 4px;
   cursor: pointer;
   border: 1px solid black;
-  font-style: bold;
 }
 
 .form-button:hover {
@@ -374,3 +372,69 @@ body {
   text-align: center;
   margin-top: 15px;
 }
+
+/* map modal css */
+.map-post-info {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#map-close-button {
+  background-color: #FFA07A;
+  width: 10%;
+  height: 30px;
+  border-radius: 90px;
+}
+
+#map-close-button:hover {
+  cursor: pointer;
+  background-color: #FF7F50;
+}
+
+.map-modal-map {
+  justify-self: center;
+  overflow: hidden;
+  height: 460px;
+  width: 700px;
+  border-radius: 12px;
+}
+
+/* messages page css */
+.messages-container {
+  padding: 20px;
+}
+
+.messages-container input {
+  border-radius: 10px;
+  height: 17px;
+  border-color: black;
+}
+.messages-container button {
+  background-color: #FFA07A;
+  margin-left: 2px;
+  border-radius: 10px;
+}
+.messages-container button:hover {
+  cursor: pointer;
+  background-color: #FF7F50;
+}
+
+.messages-sub-header {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#live-message-container {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 100%;
+  margin-left: 300px;
+  max-width: 600px;
+  padding: 5px;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+

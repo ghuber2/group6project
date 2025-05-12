@@ -22,7 +22,7 @@ const PostMap = ({ lat, lng }) => {
 
     }, [lat, lng]);
 
-    return <div style={{ overflow: "hidden", height: 460, width: 700, borderRadius: 12 }}>
+    return <div className="map-modal-map">
         {/* {/contains map/} */}
         <div ref={mapContainerRef} style={{ height: 500, width: 700 }} />
     </div>;

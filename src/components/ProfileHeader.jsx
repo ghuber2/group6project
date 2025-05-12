@@ -44,7 +44,7 @@ export default function ProfileHeader() {
 
   return (
     <>
-      <header className="profile" style={{ padding: 20, borderBottom: '1px solid #ccc' }}>
+      <header className="profile" style={{ padding: 20, borderBottom: '2px solid black' }}>
         <div className="profile-container" style={{ display: 'flex', alignItems: 'center' }}>
           <div className="profile-picture" style={{
             width: 80,
@@ -73,12 +73,12 @@ export default function ProfileHeader() {
           marginLeft: 300,
           margin: '0 auto',
           maxWidth: 700,
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
         }}
       >
-        <h3>My Posts</h3>
+        <h3 className="messages-sub-header">My Posts</h3>
         {posts.length === 0 ? (
-          <p>You haven’t made any posts yet.</p>
+          <p className='messages-sub-header'>You haven't made any posts yet.</p>
         ) : (
           posts.map((post, idx) => (
             <div key={post._id || idx} style={{ position: 'relative', marginBottom: 16 }}>
